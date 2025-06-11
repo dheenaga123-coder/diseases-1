@@ -5,6 +5,7 @@ export default function SymptomForm({ onPredict }) {
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
 
   useEffect(() => {
+    // Simulate fetching symptom list from backend
     setTimeout(() => {
       setSymptoms(["Fever", "Cough", "Fatigue", "Headache", "Nausea"]);
     }, 1000);
@@ -26,9 +27,9 @@ export default function SymptomForm({ onPredict }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Select Your Symptoms</h2>
-      {symptoms.map((symptom, idx) => (
-        <div key={idx}>
+      <h2>Select Symptoms</h2>
+      {symptoms.map((symptom, index) => (
+        <div key={index}>
           <input
             type="checkbox"
             value={symptom}
@@ -37,7 +38,7 @@ export default function SymptomForm({ onPredict }) {
           <label>{symptom}</label>
         </div>
       ))}
-      <button type="submit">Predict Disease</button>
+      <button type="submit">Predict</button>
     </form>
   );
 }

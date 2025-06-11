@@ -11,19 +11,17 @@ export default function PredictionResult({ symptoms }) {
         if (symptoms.includes("Fever") && symptoms.includes("Cough")) {
           setPrediction("Possible Flu");
         } else {
-          setPrediction("Consult Doctor");
+          setPrediction("Please consult a doctor.");
         }
         setLoading(false);
       }, 1500);
     }
   }, [symptoms]);
 
-  if (loading) return <p>Predicting...</p>;
-
   return (
     <div>
-      <h2>Disease Prediction Result</h2>
-      {prediction && <p><strong>Prediction:</strong> {prediction}</p>}
+      <h2>Prediction Result</h2>
+      {loading ? <p>Predicting...</p> : <p>{prediction}</p>}
     </div>
   );
 }
