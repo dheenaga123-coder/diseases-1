@@ -38,7 +38,18 @@ export default function SymptomForm({ onPredict }) {
           <label>{symptom}</label>
         </div>
       ))}
-      <button type="submit">Predict</button>
-    </form>
-  );
-}
+      <button
+  type="submit"
+  style={{
+    padding: "10px 20px",
+    backgroundColor: "#0070f3",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    marginTop: "10px"
+  }}
+>
+  Predict
+</button>
+
