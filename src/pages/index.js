@@ -1,8 +1,19 @@
+import React, { useState } from "react";
+import SymptomForm from "../src/components/SymptomForm";
+import PredictionResult from "../src/components/PredictionResult";
+
 export default function Home() {
+  const [userSymptoms, setUserSymptoms] = useState([]);
+
+  const handlePrediction = (symptoms) => {
+    setUserSymptoms(symptoms);
+  };
+
   return (
-    <div style={{ textAlign: "center", marginTop: "100px" }}>
-      <h1>Welcome to the AI Disease Prediction App</h1>
-      <p>This app predicts diseases based on symptoms using AI.</p>
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>Disease Prediction App</h1>
+      <SymptomForm onPredict={handlePrediction} />
+      <PredictionResult symptoms={userSymptoms} />
     </div>
   );
 }
