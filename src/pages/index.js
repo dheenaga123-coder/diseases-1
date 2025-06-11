@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SymptomForm from "../components/SymptomForm";
 import PredictionResult from "../components/PredictionResult";
+
 export default function Home() {
   const [userSymptoms, setUserSymptoms] = useState([]);
 
@@ -16,3 +17,4 @@ export default function Home() {
     </div>
   );
 }
+s
