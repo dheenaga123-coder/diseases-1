@@ -5,6 +5,7 @@ export default function SymptomForm({ onPredict }) {
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
 
   useEffect(() => {
+    // Simulate loading symptom options
     setTimeout(() => {
       setSymptoms(["Fever", "Cough", "Fatigue", "Headache", "Nausea"]);
     }, 1000);
@@ -21,7 +22,6 @@ export default function SymptomForm({ onPredict }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Selected symptoms:", selectedSymptoms);
     onPredict(selectedSymptoms);
   };
 
@@ -34,22 +34,26 @@ export default function SymptomForm({ onPredict }) {
             type="checkbox"
             value={symptom}
             onChange={handleChange}
+            id={`symptom-${idx}`}
           />
-          <label>{symptom}</label>
+          <label htmlFor={`symptom-${idx}`}>{symptom}</label>
         </div>
       ))}
-      <button
-  type="submit"
-  style={{
-    padding: "10px 20px",
-    backgroundColor: "#0070f3",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "10px"
-  }}
->
-  Predict
-</button>
 
+      <button
+        type="submit"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#0070f3",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+          marginTop: "10px"
+        }}
+      >
+        Predict
+      </button>
+    </form>
+  );
+}
