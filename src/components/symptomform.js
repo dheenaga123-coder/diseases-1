@@ -5,10 +5,7 @@ export default function SymptomForm({ onPredict }) {
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
 
   useEffect(() => {
-    // Simulate fetching symptom list from backend
-    setTimeout(() => {
-      setSymptoms(["Fever", "Cough", "Fatigue", "Headache", "Nausea"]);
-    }, 1000);
+    setSymptoms(["Fever", "Cough", "Fatigue", "Headache", "Nausea"]);
   }, []);
 
   const handleCheckboxChange = (e) => {
